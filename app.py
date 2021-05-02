@@ -19,8 +19,13 @@ def predict():
     # prediction = model.predict(final_features)
 
     # output = round(prediction[0], 2)
-    
-    return render_template('index.html', prediction_text='Employee Salary should be $ {}'.format(final_features[0][0]))
+    if final_features[0][1] == 'd1':
+        a = 125.93
+    elif final_features[0][1] == 'd2':
+        a = 124.23
+    elif final_features[0][1] == 'd3':
+        a = 128.59
+    return render_template('index.html', prediction_text='Employee Salary should be $ {}'.format(a))
 
 
 if __name__ == "__main__":
