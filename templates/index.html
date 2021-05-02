@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+ <div class="login">
+	<title>Stock Price Prediction</title>
+<center><h1>Stock Price Prediction</h1></center>
+	  
+<p>Choose the day you want to predict from the drop-down list.</p>
+
+ <form action="{{ url_for('predict')}}" method="post">
+ <label for="stock">Choose the stocks:</label>
+  <select name="stockID" id="stockID">
+    <option value="st1">Microsoft</option>
+  </select>
+  <br><br>
+  <label for="days">Choose a day:</label>
+  <select name="days" id="days">
+    <option value="d1">Tomorrow</option>
+    <option value="d2">Day after Tomorrow</option>
+    <option value="d3">2 days from Today	</option>
+    <option value="d4">3 days from today</option>
+  </select>
+  <br><br>
+  <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+</form>
+   {{ prediction_text }}
+ </div>
+</body>
+</html>
+
+
+
+<!--
+<html>
+<head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+   <body>
+   <title>Stock Price Prediction</title>
+      <center><h1>Stock Price Prediction</h1></center>
+	  
+	  <div class="container">
+		<div class="row">
+		
+		  <form action="http://localhost:5000" method="POST">
+		  	<div class="col-sm-9">
+			 <div class="form-group  purple-border">
+				  <label for="comment">texture_mean:</label>
+				  <textarea class="form-control" rows="2" id="query1" name="query1" rows="2" cols="5" autofocus>{{query1}}</textarea>
+			</div>
+			
+			</div>
+			<div class="col-sm-3">
+			<button type="submit" class="btn btn-primary" name="submit">SUBMIT</button>
+			</div>
+		  </form>
+		  </div>
+		  
+		<div class="row"> 
+			<div class="col-sm-9">
+			<textarea class="form-control" rows="2" id="comment" name="query6" rows="2" cols="5" autofocus>{{output1}}</textarea>
+			<textarea class="form-control" rows="2" id="comment" name="query7" rows="2" cols="5" autofocus>{{output2}}</textarea>
+			</div>
+		</div>
+	</div>		
+   </body>
+</html>
+-->
