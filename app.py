@@ -25,7 +25,7 @@ def predict():
         a = 124.23
     elif final_features[0][1] == 'd3':
         a = 128.59
-    return render_template('index.html', prediction_text='Employee Salary should be $ {}'.format(a))
+    return render_template('index.html', prediction_text='The Predicted Price for the choosen day is {}'.format(a))
 
 
 if __name__ == "__main__":
