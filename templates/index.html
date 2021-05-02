@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
 </head>
 
-<body>
+<body background="https://1.bp.blogspot.com/-sTxAHAxirGM/WVbAe2098nI/AAAAAAABENs/_I5sYMYgLOUzaIE7FfF4qdGX-hoAkq9SgCLcBGAs/s1600/Blog_20170624_113552.jpg">
  <div class="login">
 	<title>Stock Price Prediction</title>
 <center><h1>Stock Price Prediction</h1></center>
-	  
+<h2>	  
 <p>Choose the day you want to predict from the drop-down list.</p>
 
  <form action="{{ url_for('predict')}}" method="post">
@@ -26,6 +26,7 @@
   </select>
   <br><br>
   <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+  </h2>
 </form>
    {{ prediction_text }}
  </div>
