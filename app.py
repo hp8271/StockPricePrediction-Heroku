@@ -1,6 +1,6 @@
 import numpy as np
-from flask import Flask, request, jsonify, render_template
-import pickle
+import pandas as pd
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 # model = pickle.load(open('model.pkl', 'rb'))
@@ -16,16 +16,11 @@ def predict():
     '''
     int_features = [(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
-    # prediction = model.predict(final_features)
+    output = pd.read_csv("output.csv")
+    index = int(final_features[0][1])
+    x1 = output['result'][index-1]
 
-    # output = round(prediction[0], 2)
-    if final_features[0][1] == 'd1':
-        a = 125.93
-    elif final_features[0][1] == 'd2':
-        a = 124.23
-    elif final_features[0][1] == 'd3':
-        a = 128.59
-    return render_template('index.html', prediction_text='The Predicted Price for the choosen day is {}'.format(a))
+    return render_template('index.html', prediction_text='The Predicted Price for the {ind} day is ${ans}'.format(ind = index, ans = x1))
 
 
 if __name__ == "__main__":
