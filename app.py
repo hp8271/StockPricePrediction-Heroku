@@ -16,7 +16,7 @@ def predict():
     '''
     int_features = [(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
-    output = pd.read_csv("output.csv")
+    output = pd.read_csv("output1.csv")
     index = int(final_features[0][1])
     x1 = output['result'][index-1]
 
